@@ -3,5 +3,31 @@
     "id": "jBWMVGjm50l6LGwepDoty",
     "username": "frontendmaster"
   },
-  "pet": []
+  "pet": [
+    {
+      "id": "abcd",
+      "name": "Rajah",
+      "createdAt": 1234,
+      "type": "DOG"
+    },
+    {
+      "id": "efgh",
+      "name": "Shayna",
+      "createdAt": 1234,
+      "type": "DOG"
+    },
+    {
+      "id": "ijkl",
+      "name": "Meowulf",
+      "createdAt": 1234,
+      "type": "DOG"
+    },
+    {
+      "id": "sB3GaaP55fvn5IriOyjMm",
+      "createdAt": 1610636049636,
+      "name": "Batman",
+      "type": "DOG",
+      "user": "jBWMVGjm50l6LGwepDoty"
+    }
+  ]
 }
