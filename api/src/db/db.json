@@ -35,6 +35,13 @@
       "name": "Alex",
       "type": "DOG",
       "user": "jBWMVGjm50l6LGwepDoty"
+    },
+    {
+      "id": "FA4Sl6LBKFz_4FBkzgQDI",
+      "createdAt": 1610641484347,
+      "name": "Tiger",
+      "type": "CAT",
+      "user": "jBWMVGjm50l6LGwepDoty"
     }
   ]
 }
