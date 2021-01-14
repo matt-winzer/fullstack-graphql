@@ -30,6 +30,8 @@ const CREATE_PET = gql`
 export default function Pets() {
   const [modal, setModal] = useState(false)
   const { data, loading, error } = useQuery(ALL_PETS)
+
+  // mutation to add a new pet and update the cache once the pet has been created and data returned
   const [createPet, newPet] = useMutation(CREATE_PET, {
     update(cache, { data: { addPet } }) {
       const { pets } = cache.readQuery({ query: ALL_PETS })
@@ -43,13 +45,21 @@ export default function Pets() {
   const onSubmit = (input) => {
     setModal(false)
     createPet({
-      variables: {
-        newPet: input,
+      variables: { newPet: input },
+      optimisticResponse: {
+        __typename: 'Mutation',
+        addPet: {
+          __typename: 'Pet',
+          id: `${Math.floor(Math.random() * 10000)}`,
+          name: input.name,
+          type: input.type,
+          img: 'https://www.fillmurray.com/300/300',
+        },
       },
     })
   }
-
-  if (loading || newPet.loading) {
+  // don't want to include newPet.loading condition b/c we are using optimistic updates
+  if (loading) {
     return <Loader />
   }
 
